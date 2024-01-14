@@ -1,0 +1,31 @@
+<ng-container *ngIf="patient && id && doctorId">
+    <div class="text-center text-2xl mt-24 mb-5">
+        <h3>Edit Patient</h3>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <form [formGroup]="form" style="display: flex; flex-direction: column; max-width: 300px;">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName">
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Middle Name</mat-label>
+                <input matInput formControlName="middleName">
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName">
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>SSN</mat-label>
+                <input matInput formControlName="ssn">
+              </mat-form-field>
+          
+            <button mat-raised-button color="primary" (click)="editPatient()">Save</button>
+        </form>
+    </div>
+</ng-container>

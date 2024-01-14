@@ -1,0 +1,12 @@
+.profile-wrapper {
+    min-height: calc(100vh - 80px);
+}
+
+.mat-mdc-card {
+    position: absolute !important;
+}
+
+.mat-mdc-card-header {
+    display: inline-block;
+    padding: 16px 16px 0;
+}

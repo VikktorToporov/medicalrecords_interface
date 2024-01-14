@@ -1,0 +1,50 @@
+<ng-container *ngIf="patientId && doctorId">
+    <div class="text-center text-2xl mt-24 mb-5">
+        <h3>Create a new Visit</h3>
+    </div>
+
+    <div class="text-center text-lg mb-5">
+        <h5>Patient: {{patient?.firstName}} {{patient?.middleName}} {{patient?.lastName}}</h5>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <form [formGroup]="form" style="display: flex; flex-direction: column; max-width: 300px;">
+            <!-- Datepicker for Date -->
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="datePicker" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+                <mat-datepicker #datePicker></mat-datepicker>
+              </mat-form-field>
+          
+            <!-- Text Input for Diagnosis -->
+            <mat-form-field>
+              <mat-label>Diagnosis</mat-label>
+              <input matInput formControlName="diagnosis">
+            </mat-form-field>
+          
+            <!-- Text Input for Treatment -->
+            <mat-form-field>
+              <mat-label>Treatment</mat-label>
+              <textarea matInput formControlName="treatment"></textarea>
+            </mat-form-field>
+        
+            <!-- Datepicker for Sick Leave Start Date -->
+            <mat-form-field>
+                <mat-label>Sick Leave Start Date</mat-label>
+                <input matInput [matDatepicker]="sickLeaveStartDatePicker" formControlName="sickLeaveStartDate">
+                <mat-datepicker-toggle matSuffix [for]="sickLeaveStartDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #sickLeaveStartDatePicker></mat-datepicker>
+              </mat-form-field>
+          
+            <!-- Number Input for Sick Leave Days -->
+            <mat-form-field>
+              <mat-label>Sick Leave Days</mat-label>
+              <input matInput type="number" formControlName="sickLeaveDays">
+            </mat-form-field>
+          
+            <!-- Submit Button -->
+            <button mat-raised-button color="primary" (click)="insertVisit()">Save</button>
+        </form>
+    </div>
+</ng-container>

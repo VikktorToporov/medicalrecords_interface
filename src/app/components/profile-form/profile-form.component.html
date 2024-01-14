@@ -1,0 +1,52 @@
+<div [formGroup]="form" class="max-w-md absolute top-1/2 left-1/2" style="margin-left: -106px; margin-top: -234px;">
+    <div class="text-center mb-5">
+        <span class="text-2xl">Finish Profile</span>
+    </div>
+
+    <div class="flex flex-col items-center justify-center">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstName" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Middle Name</mat-label>
+            <input matInput placeholder="Middle Name" formControlName="middleName" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" formControlName="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="E-mail" formControlName="email" required>
+        </mat-form-field>
+
+
+        <ng-container *ngIf="isDoctor === true">
+            <mat-form-field>
+                <mat-label>Specialty</mat-label>
+                <input matInput placeholder="Specialty" formControlName="specialty" required>
+            </mat-form-field>
+
+            <div class="flex" style="width: 212px;">
+                <mat-checkbox formControlName="gp"><span>GP</span></mat-checkbox>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="isDoctor === false">
+            <mat-form-field>
+                <mat-label>SSN</mat-label>
+                <input matInput placeholder="SSN" formControlName="ssn" required>
+            </mat-form-field>
+
+            <!-- <div class="flex" style="width: 212px;">
+                <mat-checkbox formControlName="healthInsurancePaid"><span>Health Insurance Paid</span></mat-checkbox>
+            </div> -->
+        </ng-container>
+
+        <button mat-raised-button (click)="save()" class="mt-5" style="background-color: #222831; color: white; font-size: 20px; padding: 0 25px;">Save</button>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.landing-image-wrapper {
+    background-image: url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    filter: blur(5px) brightness(0.6);
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.5607843137);
+    height: 100vh;
+}
+
+.landing-login-btn {
+    background-color: white;
+    border-color: white;
+    color: black;
+    box-shadow: 0px 2px 4px 4px #00000015;
+
+    &:hover {
+        color: white;
+        background-color: transparent;
+    }
+
+    &-header {
+        border-color: #00ADB5;
+
+        &:hover {
+            background-color: #00ADB5;
+        }
+    }
+}
+
+.landing-signup-btn {
+    background-color: #00ADB5;
+    border-color: #00ADB5;
+    box-shadow: 0px 2px 4px 4px #00000015;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.text-custom-white {
+    color: #EEEEEE;
+}
+
+.bg-custom-white {
+    background-color: #EEEEEE;
+}
+
+.text-custom-blue {
+    color: #00ADB5;
+}

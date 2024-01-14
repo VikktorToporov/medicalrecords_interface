@@ -1,0 +1,63 @@
+
+<div class="fixed top-0 left-0 right-0 py-3 z-10 transition-all duration-300" style="background-color: #EEEEEE;">
+    <div class="flex justify-between items-center">
+        <a [routerLink]="['/Landing']" class="flex items-center ps-10">
+            <img src="../assets/icon.png" style="width: 35px;" />
+            <h1 class="text-5xl block ml-1" style="font-family: 'MuseoModerno', cursive;">MRM</h1>
+        </a>
+    </div>
+</div>
+
+<div class="flex items-center justify-center min-h-screen min-w-full signup-form -mt-20">
+    <div class="w-3/4 min-h-screen relative" style="background-color: #00ADB5;">
+        <div class="absolute top-1/2 left-1/2 text-center" style="margin-left: -106px; margin-top: -234px;">
+            <h2 class="text-6xl text-white">Sign Up</h2>
+
+            <div [formGroup]="form" class="mt-5">
+                <div class="flex flex-col items-center justify-center">
+                    <mat-form-field>
+                        <mat-label>Enter your e-mail</mat-label>
+                        <input matInput placeholder="E-mail" formControlName="email" required>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput placeholder="Password" formControlName="password" type="password" required>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Repeat your password</mat-label>
+                        <input matInput placeholder="Repeat Password" formControlName="password2" type="password" required>
+                    </mat-form-field>
+                    
+                    <ng-container *ngIf="form?.value?.roleDoctor === false">
+                        <mat-form-field>
+                            <mat-label>Choose a GP</mat-label>
+                            <mat-select formControlName="doctorId">
+                                <ng-container *ngFor="let doctor of doctors">
+                                    <ng-container *ngIf="doctor && doctor.id && doctor.gp">
+                                        <mat-option [value]="doctor.id">{{doctor.firstName}} {{doctor.middleName}} {{doctor.lastName}} ({{doctor.specialty}})</mat-option>
+                                    </ng-container>
+                                </ng-container>
+                            </mat-select>
+                        </mat-form-field>
+                    </ng-container>
+
+                    <div class="flex" style="width: 212px;">
+                        <mat-checkbox formControlName="roleDoctor"><span style="color: white">Doctor</span></mat-checkbox>
+                    </div>
+
+                    <button mat-raised-button (click)="signup()" class="mt-5" style="background-color: #222831; color: white; font-size: 20px; padding: 0 25px;">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-1/4 min-h-screen relative" style="background-color: #222831;">
+        <div class="absolute top-1/2 left-1/2 text-center" style="margin-left: -113px; margin-top: -52px;">
+            <h2 class="text-5xl text-white mb-5">One of us?</h2>
+
+            <a [routerLink]="['/Login']" mat-raised-button style="background-color: white; color: #222831; font-size: 20px; padding: 0 25px;">Login</a>
+        </div>
+    </div>
+</div>

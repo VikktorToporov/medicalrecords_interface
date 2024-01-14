@@ -1,0 +1,32 @@
+<div *ngIf="isLoading === false" class="profile-wrapper relative">
+    <ng-container *ngIf="showFinishSignup === true; else showProfile">
+        <app-profile-form [data]="data" [is-doctor]="isDoctor" (save)="handleFinishSignup($event)"></app-profile-form>
+    </ng-container>
+
+    <ng-template #showProfile>
+        <mat-card *ngIf="data" class="w-1/4 absolute top-1/2 left-1/2 text-center" style="margin-left: -200px; margin-top: -200px;">
+            <h2 class="text-2xl">Profile</h2>
+
+            <mat-card-header class="justify-center" style="display: flex;">
+                <div class="text-left min-w-fit">
+                    <mat-card-title>{{data.firstName}} {{data.middleName}} {{data.lastName}}</mat-card-title>
+                    <ng-container *ngIf="isDoctor === true">
+                        <mat-card-subtitle>Specialty: {{data.specialty}}</mat-card-subtitle>
+                        <mat-card-subtitle>GP: {{data.gp ? 'Yes' : 'No'}}</mat-card-subtitle>
+                    </ng-container>
+
+                    <ng-container *ngIf="isDoctor === false">
+                        <mat-card-subtitle>SSN: {{data.ssn}}</mat-card-subtitle>
+                        <mat-card-subtitle>Health Insurance Paid: {{data.healthInsurancePaid ? 'Yes' : 'No'}}</mat-card-subtitle>
+                    </ng-container>
+                    
+                    <mat-card-subtitle>Email: {{data.email}}</mat-card-subtitle>
+                </div>
+            </mat-card-header>
+        
+            <mat-card-actions class="justify-center mt-5">
+                <button mat-raised-button (click)="editProfile()">Edit</button>
+            </mat-card-actions>
+        </mat-card>
+    </ng-template>
+</div>

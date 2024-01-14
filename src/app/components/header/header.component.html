@@ -1,0 +1,39 @@
+<div class="fixed top-0 left-0 right-0 py-3 z-10 transition-all duration-300" style="background-color: #EEEEEE;">
+    <div class="flex justify-between items-center">
+        <a [routerLink]="['/Profile']" class="flex items-center ps-10">
+            <img src="../assets/icon.png" style="width: 35px;" />
+
+            <h1 class="text-5xl block ml-1" style="font-family: 'MuseoModerno', cursive;">MRM</h1>
+        </a>
+
+        <ng-container *ngIf="isDoctor === true; else patientLinks">
+            <div class="header-links-wrapper">
+                <a [routerLink]="['/Patients']">Patients</a>
+
+                <a [routerLink]="['/Visits']">Visits</a>
+
+                <a [routerLink]="['/Doctors']">Doctors</a>
+                
+                <a [routerLink]="['/PatientsReport']">Patients (Report)</a>
+
+                <a [routerLink]="['/VisitReport']">Visits (Report)</a>
+
+                <a [routerLink]="['/DiagnosisReport']">Diagnosis (Report)</a>
+
+                <a [routerLink]="['/Profile']">Profile</a>
+
+                <a (click)="logout();" class="cursor-pointer">Logout</a>
+            </div>
+        </ng-container>
+
+        <ng-template #patientLinks>
+            <div class="header-links-wrapper">
+                <a [routerLink]="['/Profile']">Profile</a>
+
+                <a [routerLink]="['/PatientHistory']">History</a>
+
+                <a (click)="logout();" class="cursor-pointer">Logout</a>
+            </div>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+
+<div class="fixed top-0 left-0 right-0 py-3 z-10 transition-all duration-300" [ngStyle]="{ 'background-color': headerSolidColor ? '#EEEEEE' : '#ffffffd6' }">
+    <div class="flex justify-between items-center">
+        <a [routerLink]="['/Landing']" class="flex items-center ps-10">
+            <img src="../assets/icon.png" style="width: 35px;" />
+            <h1 class="text-5xl block ml-1" style="font-family: 'MuseoModerno', cursive;">MRM</h1>
+        </a>
+    
+        <!-- <div class="flex items-center justify-end pe-10 gap-5">
+            <a (click)="login()" class="cursor-pointer border-2 border-solid border-gray-900 py-1 px-5 rounded-md hover:text-white hover:bg-gray-900 transition-all duration-300 landing-login-btn landing-login-btn-header">Login</a>
+        
+            <a (click)="register()" class="cursor-pointer border-2 border-solid border-gray-900 py-1 px-5 rounded-md bg-gray-900 text-white hover:bg-transparent hover:text-black transition-all duration-300 landing-signup-btn">Sign Up</a>
+        </div> -->
+    </div>
+</div>
+
+<div class="min-w-full min-h-screen -mt-20">
+    <div class="landing-image-wrapper"></div>
+
+    <div class="text-center absolute top-1/2 left-1/2" style="margin-left: -351px; margin-top: -128px;">
+        <div class="flex items-center justify-center">
+            <img src="../assets/icon.png" style="width: 100px; filter: invert();" />
+            <h1 class="text-9xl ml-3" style="font-family: 'MuseoModerno', cursive; color: #fafafa; font-weight: 600; text-shadow: 1px 3px 12px #4b4b4b;">MRM</h1>
+        </div>
+
+        <h2 class="text-6xl block mt-5" style="color: #fafafa; font-weight: 600; text-shadow: 1px 3px 12px #4b4b4b;">Medical Records Manager</h2>
+        
+        <div class="flex items-center justify-center gap-5 mt-6">
+            <a [routerLink]="['/Login']" class="text-xl cursor-pointer border-2 border-solid text-white py-1 px-5 rounded-md transition-all duration-300 landing-login-btn">Login</a>
+        
+            <a [routerLink]="['/Signup']" class="text-xl cursor-pointer border-2 border-solid py-1 px-5 rounded-md text-white transition-all duration-300 landing-signup-btn">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="text-center absolute bottom-20 left-1/2" style="margin-left: -18px; margin-top: -29px;">
+        <a (click)="scroll(target)" class="text-5xl text-custom-white cursor-pointer inline-block animate-bounce"><i class="fa-solid fa-arrow-down"></i></a>
+    </div>
+</div>
+
+<div #target class="py-32 px-20 grid 2xl:grid-cols-4 xl:grid-cols-2 gap-32 bg-custom-white">
+    <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl block mb-4 text-custom-blue"><i class="fa-solid fa-shapes"></i></span>
+        <span class="text-xl font-medium">Lorem ipsum dolor sit</span>
+        <span class="text-center mt-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, eaque laudantium beatae laboriosam expedita ut facere consequuntur nisi aliquid cum.</span>
+    </div>
+
+    <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl block mb-4 text-custom-blue"><i class="fa-solid fa-calendar"></i></span>
+        <span class="text-xl font-medium">Lorem ipsum dolor sit</span>
+        <span class="text-center mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea similique omnis obcaecati dolorem cum ex fuga, eligendi fugit alias qui.</span>
+    </div>
+
+    <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl block mb-4 text-custom-blue"><i class="fa-solid fa-certificate"></i></span>
+        <span class="text-xl font-medium">Lorem ipsum dolor sit</span>
+        <span class="text-center mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, nihil! Magnam id praesentium reiciendis facere illo quidem porro magni nemo.</span>
+    </div>
+
+    <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl block mb-4 text-custom-blue"><i class="fa-solid fa-circle-h"></i></span>
+        <span class="text-xl font-medium">Lorem ipsum dolor sit</span>
+        <span class="text-center mt-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti minus amet iusto, corporis nisi dicta et recusandae aperiam voluptate! Dolor!</span>
+    </div>
+</div>
+
+<div class="py-32 px-20 text-center" style="background-color: #00ADB5;">
+    <span class="text-3xl text-custom-white">Lorem ipsum dolor sit amet.</span>
+</div>
+
+<div class="py-32 px-20 grid 2xl:grid-cols-4 xl:grid-cols-2 gap-32 bg-custom-white">
+    <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl block mb-4 text-custom-blue"><i class="fa-solid fa-shapes"></i></span>
+        <span class="text-xl font-medium">Lorem ipsum dolor sit</span>
+        <span class="text-center mt-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, eaque laudantium beatae laboriosam expedita ut facere consequuntur nisi aliquid cum.</span>
+    </div>
+
+    <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl block mb-4 text-custom-blue"><i class="fa-solid fa-calendar"></i></span>
+        <span class="text-xl font-medium">Lorem ipsum dolor sit</span>
+        <span class="text-center mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea similique omnis obcaecati dolorem cum ex fuga, eligendi fugit alias qui.</span>
+    </div>
+
+    <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl block mb-4 text-custom-blue"><i class="fa-solid fa-certificate"></i></span>
+        <span class="text-xl font-medium">Lorem ipsum dolor sit</span>
+        <span class="text-center mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, nihil! Magnam id praesentium reiciendis facere illo quidem porro magni nemo.</span>
+    </div>
+
+    <div class="flex flex-col justify-center items-center">
+        <span class="text-5xl block mb-4 text-custom-blue"><i class="fa-solid fa-circle-h"></i></span>
+        <span class="text-xl font-medium">Lorem ipsum dolor sit</span>
+        <span class="text-center mt-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti minus amet iusto, corporis nisi dicta et recusandae aperiam voluptate! Dolor!</span>
+    </div>
+</div>
+
+<div class="py-32 px-20 text-center" style="background-color: #00ADB5;">
+    <span class="text-3xl text-custom-white">Get Started Now!</span>
+
+    <div class="flex items-center justify-center gap-5 mt-6">
+        <a [routerLink]="['/Signup']" class="text-xl cursor-pointer border-2 border-solid text-white py-1 px-5 rounded-md transition-all duration-300 landing-login-btn">Sign Up</a>
+    </div>
+</div>
